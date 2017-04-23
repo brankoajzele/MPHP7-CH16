@@ -19,9 +19,10 @@ class View {
 
         foreach ($this->category->getProducts() as $product) {
             if ($product instanceof \Foggyline\Catalog\Model\Product) {
+                $formattedPrice = number_format($product->getPrice(), 2, ',', '.');
                 $products .= '<div class="product">
                     <h1 class="product-title">' . $product->getTitle() . '</h1>
-                    <div class="product-price">' . number_format($product->getPrice(), 2, ',', '.') . '</h1>
+                    <div class="product-price">' . $formattedPrice . '</h1>
                 </div>';
             }
         }
