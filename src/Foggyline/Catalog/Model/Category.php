@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Foggyline\Catalog\Model;
 
-use Foggyline\Catalog\Product;
+use Foggyline\Catalog\Model\Product;
 
 class Category {
 
