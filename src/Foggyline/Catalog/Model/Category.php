@@ -4,14 +4,20 @@ declare(strict_types = 1);
 
 namespace Foggyline\Catalog\Model;
 
+use Foggyline\Catalog\Product;
+
 class Category {
 
     protected $title;
-    protected $products;
+    protected $products = [];
 
-    public function __construct(string $title, array $products) {
+    public function __construct(string $title) {
         $this->title = $title;
-        $this->products = $products;
+    }
+
+    public function addProduct(Product $product): self {
+        $this->products[] = $product;
+        return $this;
     }
 
     public function getTitle(): string {
